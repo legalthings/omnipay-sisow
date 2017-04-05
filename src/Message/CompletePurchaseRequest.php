@@ -36,7 +36,7 @@ class CompletePurchaseRequest extends PurchaseRequest
 
     public function getTransactionReference()
     {
-        return $this->httpRequest->query->get('trxid');
+        return $this->getParameter('transactionReference') ?: $this->httpRequest->query->get('trxid');
     }
     
     /**
